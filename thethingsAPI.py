@@ -8,7 +8,7 @@ import time
 import datetime
 
 
-class thethingsiO(object):
+class ThethingsAPI(object):
 
     URLROOT = "https://api.thethings.io/v2/things/"
     HEADERS_WRITE = {"Accept": "application/json", "Content-Type": "application/json"}
