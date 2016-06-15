@@ -4,7 +4,7 @@ Welcome to thethingsAPI's documentation!
 
 Contents:
 
-class class thethingsAPI.TheThingsAPI(token=None)
+class class ThethingsAPI.TheThingsAPI(token=None)
 
    activate(actCode)
 
