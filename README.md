@@ -1,10 +1,10 @@
 
-Welcome to TheThingsAPI's documentation!
+Welcome to thethingsAPI's documentation!
 ****************************************
 
 Contents:
 
-class class theThingsAPI.TheThingsAPI(token=None)
+class class thethingsAPI.TheThingsAPI(token=None)
 
    activate(actCode)
 
