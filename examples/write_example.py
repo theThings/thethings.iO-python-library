@@ -1,4 +1,4 @@
-from thethingsAPI import ThethingsAPI
+from thethings import ThethingsAPI
 from random import randrange
 
 thethings = ThethingsAPI("yourThingToken")
