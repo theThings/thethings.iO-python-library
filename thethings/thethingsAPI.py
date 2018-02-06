@@ -64,7 +64,7 @@ class ThethingsAPI(object):
     # key: string
     # value: number or string
     # dt: Custom timestamp format '2015-10-28T12:18:56.799Z' or datetime
-    def addVar(self, key, value, dt=None):
+    def addVar(self, key, value, dt=None, lat=None, lon=None):
         """ Add the pair {key : value} to the list of pending
         data to be written to thethings.io. This function can
         be called any times to add more variables to be sent.
@@ -76,16 +76,29 @@ class ThethingsAPI(object):
             dt: custom timestamp either string
             '2015-10-28T12:18:56.799Z' or
             python datetype.
+            lat: optional variable latitude
+            long: optional varialbe longitude
 
         """
 
         if dt is None:
+          if lat is None or lon is None:
             self._data.append({'key': str(key), 'value': value})
+          else:
+            self._data.append({'key': str(key), 'value': value,
+                              'geo': {'lat': str(lat), 'long': str(lon)}})
         else:
             if not isinstance(dt, basestring):
                 dt = TheThingsAPI.dt2str(dt)
-                self._data.append({'key': str(key), 'value': value,
-                                   'datetime': dt})
+                if lat is None or lon is None:
+                  self._data.append({'key': str(key), 'value': value,
+                                    'datetime': dt})
+                else:
+                  self._data.append({'key': str(key), 'value': value,
+                                    'datetime': dt,
+                                    'geo': {'lat': str(lat), 'long': str(lon)}})
+
+
 
 
     def write(self):
