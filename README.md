@@ -5,14 +5,14 @@ Installation
 ------------
 
 1. Use git to download distribution
-    ```
+```
 $ git clone https://github.com/theThings/thethings.iO-python-library.git
-    ```
+```
 
 2. Use setup.py to install API:
-    ```
+```
 $ python setup.py install
-    ```
+```
 
 API Documentation
 -----------------
